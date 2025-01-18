@@ -1,4 +1,5 @@
-/vendor
-.env
+.git
 node_modules
-storage
+.env
+storage/
+vendor/

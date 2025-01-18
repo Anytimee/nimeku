@@ -1,34 +1,25 @@
 {
     "version": 2,
-    "framework": null,
-    "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.0" }
-    },
-    "routes": [
-        { "src": "/build/(.*)", "dest": "/public/build/" },
-        { "src": "/(.*)", "dest": "/api/index.php" }
+    "builds": [
+        {
+            "src": "public/index.blade.php",
+            "use": "@vercel/php"
+        }
     ],
-    "public": true,
-    "buildCommand": "vite build",
-    "outputDirectory": "public",
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/public/index.blade.php"
+        }
+    ],
     "env": {
-        "APP_ENV": "local",
-        "APP_DEBUG": "true",
-        "APP_URL": "http://gimovie.test",
-        "APP_KEY": "base64:EIX0IUrWX/W89OC8XNjRZi+Xn4X+g4DInnWz45U0BtY=",
-        "APP_CONFIG_CACHE": "/tmp/config.php",
-        "APP_EVENTS_CACHE": "/tmp/events.php",
-        "APP_PACKAGES_CACHE": "/tmp/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/routes.php",
-        "APP_SERVICES_CACHE": "/tmp/services.php",
-        "VIEW_COMPILED_PATH": "/tmp",
-        "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie",
-        "DB_CONNECTION": "sqlite",
-        "DB_HOST": "127.0.0.1",
+        "APP_ENV": "production",
+        "APP_KEY": "base64:your-app-key-here",
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "your-database-host",
         "DB_PORT": "3306",
-        "DB_DATABASE": "laravel",
-        "DB_USERNAME": "root"
+        "DB_DATABASE": "your-database-name",
+        "DB_USERNAME": "your-database-username",
+        "DB_PASSWORD": "your-database-password"
     }
 }
