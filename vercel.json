@@ -1,13 +1,15 @@
 {
+    "version": 2,
     "builds": [
         {
-            "src": "public/index.php"
+            "src": "public/index.php", // Entry point aplikasi Laravel
+            "use": "@vercel/php" // Menggunakan builder PHP untuk Laravel
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/public/index.php"
+            "dest": "/public/$1" // Menyimpan URL yang diteruskan ke folder 'public'
         }
     ]
 }
