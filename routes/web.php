@@ -64,20 +64,15 @@ Route::get('/medsos', function () {
     return view('medsos.medsos');
 });
 
-Route::get('/countries', [CountryController::class, 'index']);
-
-Route::get('/a', function () {
-    return view('home');
-});
 use App\Http\Controllers\Api\AnimeStreamController;
 
-Route::get('/anime-stream/{episodeId}', [AnimeStreamController::class, 'fetchAnimeStreamingLinks']);
+// Route::get('/anime-stream/{episodeId}', [AnimeStreamController::class, 'fetchAnimeStreamingLinks']);
 Route::view('/anime', 'anime');
 Route::view('/episode', 'episode');
-Route::get('/episode-stream/{id}', [EpisodeStreamController::class, 'fetchEpisodeStream']);
+// Route::get('/episode-stream/{id}', [EpisodeStreamController::class, 'fetchEpisodeStream']);
 Route::get('/watch/{id}/{episode?}', [AnimeController::class, 'watch'])->name('watch');
 
 
-Route::get('anime/{source}/recent', [AnimeApiController::class, 'getRecentAnime']);
+// Route::get('anime/{source}/recent', [AnimeApiController::class, 'getRecentAnime']);
 
 
